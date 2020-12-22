@@ -10,10 +10,6 @@ Router::add('register', '/register', '\App\Controllers\Auth\RegisterController')
 
 // Common Routes
 Router::add('home', '/', '\App\Controllers\HomeController');
-// Router::add('reviews', '/', '\App\Controllers\ReviewsController');
-
-// User Routes
-// Router::add('user_reviews', '/reviews', '\App\Controllers\User\ReviewsController');
+Router::add('feedback', '/feedback', '\App\Controllers\FeedbackController');
 
 // API Routes
-

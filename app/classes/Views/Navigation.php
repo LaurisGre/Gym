@@ -21,7 +21,7 @@ class Navigation extends View
     {
         $nav_array = [
             App::$router::getUrl('home') => 'Home',
-            App::$router::getUrl('reviews') => 'Reviews',
+            App::$router::getUrl('feedback') => 'Feedback',
         ];
 
         if (App::$session->getUser()) {

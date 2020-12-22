@@ -15,7 +15,7 @@ class RegisterForm extends Form
                     'type' => 'text',
                     'validators' => [
                         'validate_field_not_empty',
-                        'validate_field_lenth' => [
+                        'validate_field_length' => [
                             'min' => 0,
                             'max' => 40,
                         ],

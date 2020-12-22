@@ -114,8 +114,8 @@ function textarea_attr(string $textarea_name, array $textarea): string
 {
     $attributes = [
         'name' => $textarea_name,
-        'rows' => $textarea['rows'],
-        'cols' => $textarea['cols'],
+        'rows' => $textarea['rows'] ?? '',
+        'cols' => $textarea['cols'] ?? '',
     ] + ($textarea['extras']['attr'] ?? []);
 
     return html_attr($attributes);
