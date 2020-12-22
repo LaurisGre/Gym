@@ -1,0 +1,1 @@
+All database data is stored in this folder

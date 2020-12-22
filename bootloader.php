@@ -8,10 +8,10 @@ require 'core/functions/html.php';
 require 'core/functions/form/validators.php';
 
 // App
-require 'app/functions/form/validators.php';
+// require 'app/functions/form/validators.php';
 
 // Composer 
 require 'vendor/autoload.php';
 
 // Router
-// require 'app/config/routes.php';
+require 'app/config/routes.php';
