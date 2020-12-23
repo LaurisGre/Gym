@@ -15,11 +15,11 @@ class FeedbackForm extends Form
                     'type' => 'textarea',
                     'value' => '',
                     'validators' => [
-                        // 'validate_field_not_empty',
-                        // 'validate_field_length' => [
-                        //     'min' => 0,
-                        //     'max' => 500,
-                        // ],
+                        'validate_field_not_empty',
+                        'validate_field_length' => [
+                            'min' => 0,
+                            'max' => 500,
+                        ],
                     ],
                     'extras' => [
                         'attr' => [
@@ -40,7 +40,7 @@ class FeedbackForm extends Form
                 ],
             ],
             'validators' => [
-                // 'validate_is_loged_in'
+                'validate_is_loged_in'
             ],
         ]);
     }

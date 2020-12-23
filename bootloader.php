@@ -8,7 +8,7 @@ require 'core/functions/html.php';
 require 'core/functions/form/validators.php';
 
 // App
-// require 'app/functions/form/validators.php';
+require 'app/functions/form/validators.php';
 
 // Composer 
 require 'vendor/autoload.php';

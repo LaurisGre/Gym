@@ -10,7 +10,7 @@ function html_attr(array $attr): string
 {
     $att_string = '';
     foreach ($attr as $att_name => $att_value) {
-        if ($att_name === 'readonly') {
+        if ($att_name === 'readonly' || $att_name === 'required') {
             $att_string .= $att_name;
         } else {
             $att_string .= "$att_name=\"$att_value\" ";

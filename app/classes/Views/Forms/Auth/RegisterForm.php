@@ -15,7 +15,7 @@ class RegisterForm extends Form
                     'type' => 'text',
                     'validators' => [
                         'validate_field_not_empty',
-                        'validate_field_length' => [
+                        'validate_text_length' => [
                             'min' => 0,
                             'max' => 40,
                         ],
@@ -24,6 +24,7 @@ class RegisterForm extends Form
                     'extras' => [
                         'attr' => [
                             'placeholder' => 'your name here',
+                            'required' => 'required',
                         ],
                     ],
                 ],
@@ -32,7 +33,7 @@ class RegisterForm extends Form
                     'type' => 'text',
                     'validators' => [
                         'validate_field_not_empty',
-                        'validate_field_lenth' => [
+                        'validate_text_length' => [
                             'min' => 0,
                             'max' => 40,
                         ],
@@ -41,6 +42,7 @@ class RegisterForm extends Form
                     'extras' => [
                         'attr' => [
                             'placeholder' => 'your surname here',
+                            'required' => 'required',
                         ],
                     ],
                 ],
@@ -55,6 +57,7 @@ class RegisterForm extends Form
                     'extras' => [
                         'attr' => [
                             'placeholder' => 'your email here',
+                            'required' => 'required',
                         ],
                     ],
                 ],
@@ -67,6 +70,7 @@ class RegisterForm extends Form
                     'extras' => [
                         'attr' => [
                             'placeholder' => 'your password here',
+                            'required' => 'required',
                         ],
                     ],
                 ],

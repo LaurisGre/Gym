@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers\Common\Auth;
+namespace App\Controllers\Auth;
 
 use App\App;
 

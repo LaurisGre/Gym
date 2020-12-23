@@ -17,13 +17,11 @@ class InstallController
             'surname' => 'User0',
             'email' => 'user@mail.com',
             'password' => 'user',
-            'phone_number' => 'none',
-            'adress' => 'none',
+            'phone_number' => '',
+            'address' => '',
         ]);
-        App::$db->dropTable('pizzas');
-        App::$db->createTable('pizzas');
-        App::$db->dropTable('orders');
-        App::$db->createTable('orders');
+        App::$db->dropTable('feedback');
+        App::$db->createTable('feedback');
         App::$db->save();
     }
 }

@@ -23,6 +23,8 @@ class RegisterController extends GuestController
 
     public function index()
     {
+        var_dump($this->form->values());
+        var_dump($this->form->validate());
         if ($this->form->validate()) {
             $clean_inputs = $this->form->values();
             App::$db->insertRow('users', $clean_inputs);
