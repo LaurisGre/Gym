@@ -19,22 +19,22 @@ class HomeController
     public function index(): ?string
     {
         $content = (new View([
-            'heading' => 'Welcome to our gym',
+            'title' => 'Welcome to the GYM!',
             'services' => [
                 [
-                    'img' => 'service1 img',
-                    'name' => 'service1 name here',
-                    'description' => 'service1 description'
+                    'img' => 'serv1',
+                    'name' => 'Personal trainer',
+                    'description' => 'Need some advice, want to try a new training programme? Book a session with one of our best Trainers'
                 ],
                 [
-                    'img' => 'service2 img',
-                    'name' => 'service2 name here',
-                    'description' => 'service2 description'
+                    'img' => 'serv2',
+                    'name' => 'Rent our space',
+                    'description' => 'Would you like to organise a physicall tournament and don\'t have the space for it? Look no further!'
                 ],
                 [
-                    'img' => 'service3 img',
-                    'name' => 'service3 name here',
-                    'description' => 'service3 description'
+                    'img' => 'serv3',
+                    'name' => 'Equipment renting',
+                    'description' => 'Don\'t have time to visit the gym? Rent some equipment to use at home.  Shipping included!'
                 ],
             ]
         ]))->render(ROOT . '/app/templates/index.tpl.php');
