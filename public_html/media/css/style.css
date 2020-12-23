@@ -23,26 +23,26 @@ header {
   background-color: rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
-  z-index: -2;
 }
 
 nav {
   height: 100%;
   width: 800px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 ul {
   display: flex;
+  margin: 0 10px;
 }
 
 li {
   list-style: none;
   position: relative;
   overflow: hidden;
-  padding: 6px;
+  padding: 10px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -73,7 +73,7 @@ nav a {
 }
 
 .active {
-  padding-bottom: 4px;
+  padding-bottom: 8px;
   border-bottom: 3px solid gold;
 }
 
@@ -218,6 +218,25 @@ textarea {
   padding: 20px;
 }
 
+.message {
+  color: white;
+  font-weight: bold;
+}
+
+.login-link {
+  color: gold;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+}
+
+.login-link:hover {
+  color: white;
+}
+
 /*================================*\
   # Form Settings
 \*================================*/
@@ -227,6 +246,7 @@ form {
   flex-direction: column;
   width: 400px;
   padding: 20px;
+  margin: 20px 0;
   border-radius: 30px;
   border: 5px solid silver;
   background-color: rgba(0, 0, 0, 0.8);
@@ -279,4 +299,27 @@ select {
   background-color: gold;
   box-shadow: 0 5px rgb(200, 170, 0);
   transform: translateY(4px);
+}
+
+/*================================*\
+  # Media Query Settings
+\*================================*/
+
+@media only screen and (max-width: 400px) {
+  main {
+    width: 100%;
+  }
+
+  #image-section {
+    height: 150px;
+  }
+
+  #services-container {
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .service-card {
+    margin: 20px 0;
+  }
 }

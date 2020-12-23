@@ -26,12 +26,13 @@ class FeedbackController
         if (App::$session->getUser()) {
             $form = (new FeedbackForm())->render();
         } else {
-            $message = 'Please log in if you want to writte a comment';
+            $message = 'Please log in if you want to write a comment';
 
             $link = [
                 'login' => (new Link([
-                    'url' => App::$router::getUrl('Login'),
-                    'text' => 'Login'
+                    'url' => App::$router::getUrl('login'),
+                    'text' => 'Login',
+                    'class' => 'login-link',
                 ]))->render()
             ];
         }
