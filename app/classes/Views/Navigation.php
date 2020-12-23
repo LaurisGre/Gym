@@ -20,18 +20,24 @@ class Navigation extends View
     public function generate()
     {
         $nav_array = [
-            App::$router::getUrl('home') => 'Home',
-            App::$router::getUrl('feedback') => 'Feedback',
+            'left' => [
+                App::$router::getUrl('home') => 'Home',
+                App::$router::getUrl('feedback') => 'Feedback',
+            ]
         ];
 
         if (App::$session->getUser()) {
             return $nav_array + [
-                App::$router::getUrl('logout') => 'Logout',
+                'right' => [
+                    App::$router::getUrl('logout') => 'Logout',
+                ]
             ];
         } else {
             return $nav_array + [
-                App::$router::getUrl('register') => 'Register',
-                App::$router::getUrl('login') => 'Login',
+                'right' => [
+                    App::$router::getUrl('register') => 'Register',
+                    App::$router::getUrl('login') => 'Login',
+                ]
             ];
         }
     }
