@@ -77,6 +77,15 @@ nav a {
   border-bottom: 3px solid gold;
 }
 
+footer {
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: grey;
+}
+
 /*================================*\
   # Home Settings
 \*================================*/
@@ -164,11 +173,110 @@ main {
   height: 100%;
 }
 
-footer {
-    height: 70px;
-    background-color: rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: grey;
+/*================================*\
+  # Feedback Settings
+\*================================*/
+
+#feedback-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../img/gym_bg.jpg");
+  padding: 20px;
+}
+
+table {
+  margin: 20px 0;
+  width: 800px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-left: 5px solid silver;
+  border-right: 5px solid silver;
+}
+
+td:nth-child(2) {
+  width: 500px;
+}
+
+th,
+td {
+  padding: 20px;
+  border-bottom: 2px solid gold;
+  text-align: center;
+}
+
+#feedback-form {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  width: 400px;
+  height: 200px;
+  padding: 20px;
+}
+
+/*================================*\
+  # Form Settings
+\*================================*/
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 20px;
+  border-radius: 30px;
+  border: 5px solid silver;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+input,
+button,
+select {
+  padding: 20px;
+  margin: 10px 0;
+  width: 100%;
+  border-radius: 10px;
+  background-color: gold;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+
+.label_text {
+  color: white;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.error {
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/*================================*\
+  # Button Settings
+\*================================*/
+
+.btn {
+  width: 100%;
+  margin: 20px 0;
+  box-shadow: 0 9px rgb(200, 170, 0);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgb(255, 220, 90);
+  box-shadow: 0 7px rgb(200, 170, 0);
+  transform: translateY(2px);
+}
+
+.btn:active {
+  background-color: gold;
+  box-shadow: 0 5px rgb(200, 170, 0);
+  transform: translateY(4px);
 }

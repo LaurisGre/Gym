@@ -11,7 +11,7 @@ class FeedbackForm extends Form
         parent::__construct([
             'fields' => [
                 'text' => [
-                    'label' => 'Comment',
+                    'label' => 'Your Feedback',
                     'type' => 'textarea',
                     'value' => '',
                     'validators' => [

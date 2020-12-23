@@ -1,5 +1,5 @@
 <section id="feedback-container">
-    <h1><?php print $data['title']; ?></h1>
+    <p class="title"><?php print $data['title']; ?></p>
 
     <section id="feedback-table-container">
         <?php if (isset($data['table'])) : ?>
