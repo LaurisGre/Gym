@@ -11,15 +11,17 @@ class FeedbackApiController
     public function index(): ?string
     {
         $response = new Response();
-        $rows = $this->createRows();
+
+        $data = App::$db->getRowsWhere('feedback');
+        $rows = $this->createRows($data);
+
         $response->setData($rows);
 
         return $response->toJson();
     }
 
-    private function createRows(): ?array
+    private function createRows($data): ?array
     {
-        $data = App::$db->getRowsWhere('feedback');
 
         foreach ($data as $id => &$row) {
             $row = [
@@ -44,14 +46,25 @@ class FeedbackApiController
         $form = new FeedbackForm();
 
         if ($form->validate()) {
-            $id = (array_key_first(App::$db->getRowsWhere('users', ['email' => App::$session->getUser()['email']])));
-            App::$db->insertRow('feedback', [
-                'user_id' => $id,
-                'timestamp' => time(),
+
+            $user_id = (array_key_first(App::$db->getRowsWhere('users', ['email' => App::$session->getUser()['email']])));
+
+            $row = [
+                'user_id' => $user_id,
                 'text' => $form->values()['text'],
-            ]);
+                'timestamp' => time(),
+            ];
+
+            App::$db->insertRow('feedback', $row);
+
+            $new_row = [
+                'name' => App::$db->getRowWhere('users', ['email' => App::$session->getUser()['email']])['name'],
+                'text' => $row['text'],
+                'timestamp' => $this->calcTime(time()),
+            ];
         }
 
+        $response->setData($new_row);
         return $response->toJson();
     }
 }

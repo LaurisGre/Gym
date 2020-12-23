@@ -122,8 +122,7 @@ const forms = {
         },
         success: function (data) {
             const element = forms.create.getElement();
-            console.log(element);
-            console.log('asd');
+            console.log(data);
 
             table.row.append(data);
             forms.ui.errors.hide(element);
