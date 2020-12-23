@@ -16,7 +16,7 @@ class BasePage extends Page
             ],
             'js' => [],
             'header' => $nav->render(),
-            'footer' => 'this is the footer',
+            'footer' => '© 2020 Laurynas Greska, all rights reserved',
         ]);
     }
 

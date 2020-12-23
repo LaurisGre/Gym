@@ -16,7 +16,7 @@ class FeedbackForm extends Form
                     'value' => '',
                     'validators' => [
                         'validate_field_not_empty',
-                        'validate_field_length' => [
+                        'validate_text_length' => [
                             'min' => 0,
                             'max' => 500,
                         ],
@@ -40,7 +40,10 @@ class FeedbackForm extends Form
                 ],
             ],
             'validators' => [
-                'validate_is_loged_in'
+                // 'validate_is_loged_in'
+            ],
+            'attr' => [
+                'id' => 'feedback-form',
             ],
         ]);
     }

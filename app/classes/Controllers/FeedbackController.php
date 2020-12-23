@@ -7,11 +7,11 @@ use App\Views\BasePage;
 use App\Views\Forms\User\FeedbackForm;
 use App\Views\Tables\FeedbackTable;
 use Core\View;
+use Core\Views\Link;
 
 class FeedbackController
 {
     protected $page;
-    protected FeedbackForm $form;
 
     public function __construct()
     {
@@ -19,22 +19,29 @@ class FeedbackController
             'title' => 'Feedback',
             'js' => ['/media/js/feedback.js']
         ]);
-        $this->form = new FeedbackForm();
     }
 
     public function index()
     {
-        $user = App::$session->getUser();
+        if (App::$session->getUser()) {
+            $form = (new FeedbackForm())->render();
+        } else {
+            $message = 'Please log in if you want to writte a comment';
 
-        if ($this->form->validate()) {
-
+            $link = [
+                'login' => (new Link([
+                    'url' => App::$router::getUrl('Login'),
+                    'text' => 'Login'
+                ]))->render()
+            ];
         }
 
-        $table = new FeedbackTable();
         $content = (new View([
-            'title' => 'Check out our comments',
-            'tables' => ['feedback_table' => $table->render()],
-            'forms' => ['feedback_form' => (new FeedbackForm())->render()],
+            'title' => 'Comments',
+            'table' => (new FeedbackTable())->render(),
+            'form' => $form ?? null,
+            'message' => $message ?? null,
+            'link' => $link ?? null,
         ]))->render(ROOT . '/app/templates/feedback.tpl.php');
 
         $this->page->setContent($content);

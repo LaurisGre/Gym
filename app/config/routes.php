@@ -13,3 +13,5 @@ Router::add('home', '/', '\App\Controllers\HomeController');
 Router::add('feedback', '/feedback', '\App\Controllers\FeedbackController');
 
 // API Routes
+Router::add('api_feedback_get', '/api/feedback/get', '\App\Controllers\API\FeedbackApiController');
+Router::add('api_feedback_create', '/api/feedback/create', '\App\Controllers\API\FeedbackApiController', 'create');

@@ -2,23 +2,20 @@
 
 namespace App\Views\Tables;
 
-use App\App;
 use Core\Views\Table;
 
 class FeedbackTable extends Table
 {
-    public function __construct()
+    public function __construct($rows = [])
     {
-        $rows = App::$db->getRowsWhere('orders');
-
         parent::__construct([
             'headers' => [
                 'Name',
                 'Comment',
                 'Date',
             ],
-            'rows' => $rows
+            'rows' => $rows,
+            'id' => 'feedback-table',
         ]);
     }
-
 }

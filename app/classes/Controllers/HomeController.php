@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 
-use App\App;
 use App\Views\BasePage;
 use Core\View;
 
@@ -14,16 +13,13 @@ class HomeController
     {
         $this->page = new BasePage([
             'title' => 'Home',
-            'js' => ['/media/js/home.js']
         ]);
     }
 
     public function index(): ?string
     {
-        $user = App::$session->getUser();
-
         $content = (new View([
-            'heading' => 'This is the HomePage',
+            'heading' => 'Welcome to our gym',
             'services' => [
                 [
                     'img' => 'service1 img',
