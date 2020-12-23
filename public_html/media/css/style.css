@@ -194,6 +194,7 @@ table {
   color: white;
   border-left: 5px solid silver;
   border-right: 5px solid silver;
+  overflow: hidden;
 }
 
 td:nth-child(2) {
@@ -205,6 +206,23 @@ td {
   padding: 20px;
   border-bottom: 2px solid gold;
   text-align: center;
+}
+
+tr {
+  animation-name: slider;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+@keyframes slider {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 
 #feedback-form {
